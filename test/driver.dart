@@ -20,12 +20,22 @@ void testFail(
   tests.add({'code': code, 'error': message, 'options': options, 'pluginOptions': pluginOptions});
 }
 
+Map<String, Object> stats = {
+  "failed": 0,
+  "testsRun": 0
+};
+
+void log(String title, String mesage) {
+}
+
 void report(state, code, message) {
   if (state != "ok") {
-    ++stats.failed;
+    stats["failed"] += 1;
     log(code, message);
   }
-  ++stats.testsRun;
+  stats["testsRun"]++;
 }
 
 void runTests(config, callback) {
+}
+
