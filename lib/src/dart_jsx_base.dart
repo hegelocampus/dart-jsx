@@ -1,6 +1,12 @@
 // TODO: Put public facing types in this file.
 
-/// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
+RegExp hexNumber = RegExp(r'^[\da-fA-F]+$');
+RegExp decimalNumber = RegExp(r'^\d+$');
+
+const acornDsxMap = <Object, Object>{};
+
+Object getDsxTokens(acorn) {
+  var acornDsx = acornDsxMap[acorn];
+  return acornDsx;
 }
+
